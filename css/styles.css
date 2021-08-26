@@ -8,6 +8,7 @@
   --black-text-color: #000000;
   --hero-footer-background-color: #2f303a;
   --body-color: #e5e5e5;
+  --fill-svg: #afb1b8;
 }
 
 body {
@@ -127,17 +128,26 @@ ol {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--text-color);
-  display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+  display: flex;
+  align-items: center;
 }
+
 .contacts-item:not(:last-child) {
   margin-right: 50px;
 }
-
+.contacts-icon {
+  margin-right: 10px;
+  fill: var(--text-color);
+}
 .contacts-link:hover,
 .contacts-link:focus {
   color: var(--accent-color);
+}
+.contacts-link:hover .contacts-icon,
+.contacts-link:focus .contacts-icon {
+  fill: var(--accent-color);
 }
 
 .active {
@@ -206,6 +216,21 @@ ol {
   margin-left: 30px;
   margin-top: 30px;
 }
+.advantages__icons-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  background-color: #f5f4fa;
+}
+.advantages-icon {
+  width: 70px;
+  height: 70px;
+}
+
 .advantages__title {
   font-size: 14px;
   font-weight: 700;
@@ -268,9 +293,81 @@ ol {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+  margin-bottom: 16px;
+}
+.team__social-list-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--primary-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.team__social-list-link:hover,
+.team__social-list-link:focus,
+.team__social-list-link:hover .team__social-icon,
+.team__social-list-link:hover .team__social-icon {
+  fill: var(--primary-background-color);
+  background-color: var(--accent-color);
+}
+.team__social-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.team__social-list-item:not(:last-child) {
+  margin-right: 10px;
+}
+.team__social-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--fill-svg);
+}
+/* clients */
+.clients__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
+  margin-left: -30px;
+}
+.clients__item {
+  flex-basis: calc((100% - 180px) / 6);
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.clients__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+.clients__icon {
+  fill: #afb1b8;
+  width: 106px;
+  height: 60px;
+}
+.clients__link:hover,
+.clients__link:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.clients__link:hover .clients__icon,
+.clients__link:focus .clients__icon {
+  fill: var(--accent-color);
 }
 
 /* footer */
+.footer-main-wrapper {
+  display: flex;
+  align-items: baseline;
+}
+.address-wrapper {
+  margin-right: 70px;
+}
 .footer-logo {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -310,7 +407,33 @@ ol {
 .footer-contacts-link:focus {
   color: var(--accent-color);
 }
+.social-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-background-color);
+  margin-bottom: 20px;
+}
 
+.footer-social-icon {
+  fill: var(--primary-background-color);
+}
+.footer-social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--primary-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--accent-color);
+}
 /* portfolio */
 .filters {
   display: flex;
@@ -336,6 +459,8 @@ ol {
 .filters-btn:focus {
   background-color: var(--accent-color);
   color: var(--white-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .projects {
   display: flex;
@@ -347,6 +472,11 @@ ol {
   flex-basis: calc((100% - 270px) / 9);
   margin-left: 30px;
   margin-top: 30px;
+}
+.projects__item:hover,
+.projects__item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 1px 4px 6px rgba(0, 0, 0, 0.16),
+    0px 4px 4px rgba(0, 0, 0, 0.06);
 }
 .projects__title {
   font-weight: 700;
